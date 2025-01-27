@@ -2,6 +2,7 @@
 #include <vector>
 #include <algorithm> 
 #include <cmath>
+#include <math.h>
 using namespace std;
 double moyenne(vector<double> valeurs) 
 {
@@ -59,4 +60,19 @@ double equart_type(vector<double> valeurs) {
 	total = sqrt((somme / (longeur - 1)));
 	return total;
 }
-double distance()
+double distance(vector<double> point1, vector<double> point2) {
+	double distance =0;
+	double total;
+	for (int i = 0; i < point1.size(); i++) {
+		distance += pow((point2[i] - point1[i]), 2.0);
+	}
+	total = sqrt(distance);
+	return total;
+}
+double dis_man(vector<double> point1, vector<double> point2) {
+	double total_man =0;
+	for (int i = 0; i < point1.size(); i++) {
+		total_man += (point2[i] - point1[i]);
+	}
+	return total_man;
+}
