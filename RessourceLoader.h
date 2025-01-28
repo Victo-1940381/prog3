@@ -5,44 +5,29 @@
 #include <vector>
 #include <string>
 using namespace std;
-
 const int max_row = 2700;
-const int max_col = 11;
-//int donner();
-vector<string> data();
-ifstream file("binary-winequality-white.csv");
+const int max_col = 12;
+
 class RessourceLoader
 { 
+private:
+	string m_nom_fichier;
+	
+	/*vector<double> datavalue;
+	string line;
+	char del = ',';
+	while (getline(file, line,del)) {
+		datavalue.push_back(stod(line));
+	}
+	return datavalue;*/
 
 public:
+	RessourceLoader(string nom_fichier);
+	vector<double> data(string nom_fichier);
+	void getTrainData(string nom_fichier);
+	void getTestData(string nom_fichier);
+	
+	
 
-private:
-	
+
 };
-/*
-int donner() {
-	
-	if (!file.is_open()) {
-		cerr << "Error opening file!" << endl;
-		return 1;
-	}
-	string line;
-	vector<string> data;
-	int row = 0;
-	while (getline(file, line) && row < max_row) {
-		stringstream ss(line);
-		string cell;
-		int col = 0;
-		while(getline(ss, cell, ',') && col< max_col){
-		}
-	}
-	return 0;
-}*/
-vector<string> data() {
-	vector<string> datavalue;
-	string line;
-	while (getline(file, line)) {
-		datavalue.push_back(line);
-	}
-	return datavalue;
-}

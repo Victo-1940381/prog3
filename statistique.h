@@ -52,7 +52,7 @@ double equart_type(vector<double> valeurs) {
 	stable_sort(valeurs.begin(), valeurs.end());
 	int longeur = valeurs.size();
 	double moyenne_type = moyenne(valeurs);
-	double somme;
+	double somme =0.0;
 	for (int i = 0;i < longeur;i++) {
 		moyene_type.push_back(valeurs[i]-moyenne_type);
 		somme += moyene_type[i];
