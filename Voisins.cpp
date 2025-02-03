@@ -8,23 +8,30 @@
 #include <string.h>
 string fichier = "doner.csv";
 using namespace std;
+
 int main()
-{
+{ //toute le code en commentaire se sont des teste que j'ai effectuer
 	//ifstream file("TextFile1.txt");
 	//ifstream file("doner.csv"); /*erreur varaible false et rentre pas dans boucle while*/
     
+	/*ifstream file(fichier);
+	string line;
 	
+	for (int i = 0;i < 20; i++) {
+		getline(file, line, ',');
+		cout << line << " ";
+	}*/
 	
+   RessourceLoader donner(fichier);
+   vector <float> valeur = donner.data(fichier);
 	
-	RessourceLoader donner(fichier);
-	 //donner.data(fichier);
-	//donner.getTrainData(fichier);
-	donner.getTestData(fichier);
 
-	/* vector<double> test = donner.data(fichier);
-	 for(int i =0;i<test.size();i++){
-	 cout << test[i] << " ";
-	 }¸*/
+	
+	//donner.getTrainDatalinked(valeur);
+	//donner.display();
+	//donner.getTrainData(valeur);
+	//donner.getTestData(valeur);
+
 	
 
 }
