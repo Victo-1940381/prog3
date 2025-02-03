@@ -31,16 +31,17 @@ public:
 	Noeud* ajouter_fin(float value,Noeud* head)
 	{
 		
-		Noeud* nouveau = new Noeud();
-		nouveau->donnee = value;
-		
-		if (head == nullptr) {
+		Noeud* nouveau = new Noeud(value);
+		if (head == nullptr)
+		{
 			return nouveau;
 		}
+
 		Noeud* fin = head;
 		while (fin->suivant != nullptr) {
 			fin = fin->suivant;
 		}
+		fin->suivant = nouveau;
 		return head;
 
 		/*
@@ -61,34 +62,48 @@ public:
 		return nouveau; */
 
 	}
-	void getTrainDatalinked(vector<float> data) {
-		Noeud* value = new Noeud();
-		value->donnee = data[0];
-		value->suivant = nullptr;
-		value->avant = nullptr;
-		cout <<value->donnee;
-		for (int i = 1;i < 13 /*(data.size() / 2)*/;i++)
-		{
-			Noeud* nouv = new Noeud();
-			nouv->donnee = data[i];
-			nouv->suivant = nullptr;
-			nouv->avant = nullptr;
-
-			if (i == 1) {
-				value->suivant = nouv;
-				nouv->avant = value;
-			}
-			else {
-				nouv->avant = nouv;
-
-			}
-			cout << " " << nouv->donnee;
-			//value->suivant = 
-			//Noeud* les_donner = ajouter_fin(data[i],value);
-			
-
-		}
+	Noeud* getTrainDatalinked(vector<float> data) {
 		
+		Noeud* head = new Noeud(data[0]);
+		for (int i = 1;i < (data.size() / 2);i++) {
+			head = ajouter_fin(data[i],head);
+		}
+		return head;
+		//Noeud* value = new Noeud();
+		//value->donnee = data[0];
+		//value->suivant = nullptr;
+		//value->avant = nullptr;
+		//cout <<value->donnee;
+		//for (int i = 1;i < 13 /*(data.size() / 2)*/;i++)
+		//{
+		//	Noeud* nouv = new Noeud();
+		//	nouv->donnee = data[i];
+		//	nouv->suivant = nullptr;
+		//	nouv->avant = nullptr;
+
+		//	if (i == 1) {
+		//		value->suivant = nouv;
+		//		nouv->avant = value;
+		//	}
+		//	else {
+		//		nouv->avant = nouv;
+
+		//	}
+		//	cout << " " << nouv->donnee;
+		//	//value->suivant = 
+		//	//Noeud* les_donner = ajouter_fin(data[i],value);
+		//	
+
+		//}
+		
+	}
+	Noeud* getTestDataLinked(vector<float> data) {
+
+		Noeud* head = new Noeud(data[0]);
+		for (int i = (data.size() / 2);i < data.size();i++) {
+			head = ajouter_fin(data[i], head);
+		}
+		return head;
 	}
 
 	void display() {

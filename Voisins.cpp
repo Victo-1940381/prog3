@@ -16,18 +16,21 @@ int main()
     
 	/*ifstream file(fichier);
 	string line;
-	
-	for (int i = 0;i < 20; i++) {
-		getline(file, line, ',');
-		cout << line << " ";
-	}*/
+	*/
 	
    RessourceLoader donner(fichier);
    vector <float> valeur = donner.data(fichier);
 	
-
+   //Noeud* reponce = donner.getTrainDatalinked(valeur);
+   Noeud* reponce = donner.getTestDataLinked(valeur);
+   while (reponce != nullptr) {
+	   cout << reponce->donnee << " ";
+	   reponce = reponce->suivant;
+   }
 	
-	//donner.getTrainDatalinked(valeur);
+	
+   
+
 	//donner.display();
 	//donner.getTrainData(valeur);
 	//donner.getTestData(valeur);
