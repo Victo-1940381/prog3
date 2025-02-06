@@ -21,18 +21,18 @@ float medianne(vector<float> valeurs)
 	stable_sort(valeurs.begin(), valeurs.end());
 	int longueur = valeurs.size();
 	int pos_med;
-	double mediane;
+	float mediane;
 	if (longueur%2 == 1) {
 		pos_med = (longueur + 1) / 2;
 		mediane = valeurs[pos_med - 1];
 	}
 	else {
-		double val_1;
-		double val_2;
-		double pos_med_pair = (longueur + 1) / 2;
+		float val_1;
+		float val_2;
+		float pos_med_pair = (longueur + 1) / 2;
 		int pos_round = round(pos_med_pair);
 		pos_med = pos_med_pair;
-		double decimal = pos_med_pair - pos_med;
+		float decimal = pos_med_pair - pos_med;
 		if (decimal < 0.5) {
 			val_1 = valeurs[pos_round];
 			val_2 = valeurs[pos_round + 1];
@@ -47,12 +47,12 @@ float medianne(vector<float> valeurs)
 	return mediane;
 }
 float equart_type(vector<float> valeurs) {
-	vector<double> moyene_type;
-	double total;
+	vector<float> moyene_type;
+	float total;
 	stable_sort(valeurs.begin(), valeurs.end());
 	int longeur = valeurs.size();
-	double moyenne_type = moyenne(valeurs);
-	double somme =0.0;
+	float moyenne_type = moyenne(valeurs);
+	float somme =0.0;
 	for (int i = 0;i < longeur;i++) {
 		moyene_type.push_back(valeurs[i]-moyenne_type);
 		somme += moyene_type[i];
@@ -61,8 +61,8 @@ float equart_type(vector<float> valeurs) {
 	return total;
 }
 float distance(vector<float> point1, vector<float> point2) {
-	double distance =0;
-	double total;
+	float distance =0;
+	float total;
 	for (int i = 0; i < point1.size(); i++) {
 		distance += pow((point2[i] - point1[i]), 2.0);
 	}
@@ -70,7 +70,7 @@ float distance(vector<float> point1, vector<float> point2) {
 	return total;
 }
 float dis_man(vector<float> point1, vector<float> point2) {
-	double total_man =0;
+	float total_man =0;
 	for (int i = 0; i < point1.size(); i++) {
 		total_man += (point2[i] - point1[i]);
 	}
