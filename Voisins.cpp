@@ -3,6 +3,7 @@
 #include <sstream>
 #include <iostream>
 #include "RessourceLoader.h"
+#include "statistique.h"
 #include <vector>
 #include <string>
 #include <string.h>
@@ -17,17 +18,19 @@ int main()
 	/*ifstream file(fichier);
 	string line;
 	*/
-	
+	vector <float> val = {50.2,10.4,18.3,90.9,60,35};
    RessourceLoader donner(fichier);
-   vector <float> valeur = donner.data(fichier);
+   cout << moyenne(val);
+  
+   //vector <float> valeur = donner.data(fichier);
 	
-   Noeud* reponce = donner.getTrainDatalinked(valeur);
+   //Noeud* reponce = donner.getTrainDatalinked(valeur);
    //Noeud* reponce = donner.getTestDataLinked(valeur);
   // cout << reponce->donnee << " ";
-   while (reponce != nullptr) {
+ /*  while (reponce != nullptr) {
 	   cout << reponce->donnee << " ";
 	   reponce = reponce->suivant;
-   }
+   }*/
 	
 	
    

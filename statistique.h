@@ -6,8 +6,8 @@
 using namespace std;
 float moyenne(vector<float> valeurs) 
 {
-	double total = 0.0;
-	double moyenne = 0.0;
+	float total = 0.0;
+	float moyenne = 0.0;
 	int longueur = valeurs.size();
 	for (int i = 0; i < longueur; i++)
 	{
