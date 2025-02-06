@@ -48,15 +48,16 @@ float medianne(vector<float> valeurs)
 }
 float equart_type(vector<float> valeurs) {
 	vector<float> moyene_type;
-	float total;
+	float total = 0.0;
 	stable_sort(valeurs.begin(), valeurs.end());
-	int longeur = valeurs.size();
-	float moyenne_type = moyenne(valeurs);
-	float somme =0.0;
+	int longeur = valeurs.size(); //bonne
+	float moyenne_type = moyenne(valeurs); //bonne
+	float somme =0.0; //erreur?
 	for (int i = 0;i < longeur;i++) {
 		moyene_type.push_back(valeurs[i]-moyenne_type);
-		somme += moyene_type[i];
+		somme += pow(moyene_type[i], 2);
 	}
+	//total = somme;
 	total = sqrt((somme / (longeur - 1)));
 	return total;
 }

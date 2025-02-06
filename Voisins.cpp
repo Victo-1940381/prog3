@@ -18,9 +18,9 @@ int main()
 	/*ifstream file(fichier);
 	string line;
 	*/
-	vector <float> val = {50.2,10.4,18.3,90.9,60,35};
+	vector <float> val = {50,101.4,178.3,907.9,604,325};
    RessourceLoader donner(fichier);
-   cout << moyenne(val);
+   cout << equart_type(val);
   
    //vector <float> valeur = donner.data(fichier);
 	
