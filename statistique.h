@@ -4,7 +4,7 @@
 #include <cmath>
 #include <math.h>
 using namespace std;
-double moyenne(vector<double> valeurs) 
+float moyenne(vector<float> valeurs) 
 {
 	double total = 0.0;
 	double moyenne = 0.0;
@@ -16,7 +16,7 @@ double moyenne(vector<double> valeurs)
 	moyenne = total / longueur;
 	return moyenne;
 }
-double medianne(vector<double> valeurs) 
+float medianne(vector<float> valeurs) 
 {
 	stable_sort(valeurs.begin(), valeurs.end());
 	int longueur = valeurs.size();
@@ -46,7 +46,7 @@ double medianne(vector<double> valeurs)
 	}
 	return mediane;
 }
-double equart_type(vector<double> valeurs) {
+float equart_type(vector<float> valeurs) {
 	vector<double> moyene_type;
 	double total;
 	stable_sort(valeurs.begin(), valeurs.end());
@@ -60,7 +60,7 @@ double equart_type(vector<double> valeurs) {
 	total = sqrt((somme / (longeur - 1)));
 	return total;
 }
-double distance(vector<double> point1, vector<double> point2) {
+float distance(vector<float> point1, vector<float> point2) {
 	double distance =0;
 	double total;
 	for (int i = 0; i < point1.size(); i++) {
@@ -69,7 +69,7 @@ double distance(vector<double> point1, vector<double> point2) {
 	total = sqrt(distance);
 	return total;
 }
-double dis_man(vector<double> point1, vector<double> point2) {
+float dis_man(vector<float> point1, vector<float> point2) {
 	double total_man =0;
 	for (int i = 0; i < point1.size(); i++) {
 		total_man += (point2[i] - point1[i]);

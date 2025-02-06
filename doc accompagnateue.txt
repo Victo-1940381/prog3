@@ -1,0 +1,20 @@
+j'ai fait une struct pour faire la liste  chainer nommer noeud avec une valeur nommer donnee et un suivant
+j'ai créér une classe ressource loader qui va intiancier le noeud head avec le string du nom du fichier ou sont situer les donnee
+jai fait 10 function: data,GetTrainData,GetTestData,GetTrainDataLinked,GetTestDataLinked,moyenne,equart_type,medianne,distance,dis_man:
+DATA:la function va chercher le fichier pour le lire elle va ensuite lire la ligne j'usqua bout
+pour ensuite la mettre dans un string ensuite j'ai utilisé un methode nommer stringstream qui va créé un objet avec la ligne qui va ensuite la séparé par virgule
+le methode getline va chercher la ligne et on peut lui donner un delimiter en paramètre(optionel) si aucun delimiter et ecrit il va lire la ligne j'usqua la fin la ligne qui va lenvoyer dans un variable
+ensuite on la methode pushback qui va envoyer la ligne a la fin du vector créé au debut de la function 
+et on a la methode stof qui transforme une string en float. la function prend la ligne la separe par virgule et la converti en float et la mat dans un vecteur et retourne ce vectweur
+GETTRAINDATA:cette function va aller chercher le vecteur de float passé en paramètre(data) et va afficher dans la console la première motier des valeur
+GETTESTDATA:cette function va aller chercher le vecteur de float passé en paramètre(data) et va afficher dans la console la deuxième motier des valeur
+GETTRAINDATALINKED:cette function est tres similaire a GetTrainData mais la différence c'est quelle retoune une liste chainer avec tout les valeur de la première motier des valeur
+GETTESTDATALINKED:cette function est tres similaire a GetTestData mais la différence c'est quelle retourn une liste chainer avec tout les valeur de la deuximeme motier des valeurs
+MOYENNE:va calculer la moyenne de toute les valeurs dun vecteur de flaot passé en paramètre et va retourne le float de la moyenne calculer
+MEDIANNE:va calculer la medianne en utilisant satble_sort qui va trier les valeurs du vecteur de flaot passé en paramètre si le nombre de valeur
+est impair elle va prendre la valeur de celui au milieu du vecteur et va le retourné sinon elle va faire le calcul avec les deux valeur au millieu
+EQUART_TYPE:elle va calculer l'equat type du vecteur de float passer en paramètre elle va aussi utiliser la methode sqrt qui fait la racine carré
+et retoune l'equat type
+DISTANCE:la function va calculer la distance entre 2 point float passé en paramètre. elle va faire le calcul de la diatance entre 2 point et retourné son résultat
+DIS_MAN:va calculer la distance manathan entre 2 point float passé en paramètre . le calcul est le meme que distance mais sans faire la racine carré a la fin du calcul
+

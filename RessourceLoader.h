@@ -112,19 +112,7 @@ public:
 		return head;
 	}
 
-	void display() {
-		if (!head) {
-			cout << "List is empty." << endl;
-			return;
-		}
-
-		Noeud* temp = head;
-		while (temp) {
-			cout << temp->donnee << " -> ";
-			temp = temp->suivant;
-		}
-		cout << "NULL" << endl;
-	}
+	
 }
 
 ;
