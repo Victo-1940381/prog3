@@ -21,8 +21,9 @@ int main()
    RessourceLoader donner(fichier);
    vector <float> valeur = donner.data(fichier);
 	
-   //Noeud* reponce = donner.getTrainDatalinked(valeur);
-   Noeud* reponce = donner.getTestDataLinked(valeur);
+   Noeud* reponce = donner.getTrainDatalinked(valeur);
+   //Noeud* reponce = donner.getTestDataLinked(valeur);
+  // cout << reponce->donnee << " ";
    while (reponce != nullptr) {
 	   cout << reponce->donnee << " ";
 	   reponce = reponce->suivant;

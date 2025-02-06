@@ -66,6 +66,9 @@ public:
 		
 		Noeud* head = new Noeud(data[0]);
 		for (int i = 1;i < (data.size() / 2);i++) {
+			if ((i + 1) % 12 == 0) {
+				i++;
+			}
 			head = ajouter_fin(data[i],head);
 		}
 		return head;
@@ -101,6 +104,9 @@ public:
 
 		Noeud* head = new Noeud(data[0]);
 		for (int i = (data.size() / 2);i < data.size();i++) {
+			if ((i + 1) % 12 == 0) {
+				i++;
+			}
 			head = ajouter_fin(data[i], head);
 		}
 		return head;

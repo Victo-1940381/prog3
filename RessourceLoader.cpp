@@ -24,23 +24,7 @@ vector<float> RessourceLoader::data(string nom_fichier) {
 		while (getline(ss, split, del)) {
 			datavalue.push_back(stof(split));
 		}
-		/*iss << line;
-		datavalue.push_back(stof(line));
-		if (comp % 12 == 0) {
-			while (getline(file, line)) {
-
-				datavalue.push_back(stof(line));
-			}
-		}
-		else {
-			while (getline(file, line, del)) {
-			
-				datavalue.push_back(stof(line));
-			}
-		}
-	
 		
-		comp++;*/
 	}
 	return datavalue;
 }
