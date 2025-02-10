@@ -5,11 +5,6 @@
 #include <vector>
 #include <string>
 
-//ifstream file("binary-winequality-white.csv");
-/*RessourceLoader::RessourceLoader(string nom_fichier) {
-	m_nom_fichier = nom_fichier;
-	m_premier = nullptr;
-}*/
 vector<float> RessourceLoader::data(string nom_fichier) {
 	ifstream file(nom_fichier);
 	vector<float> datavalue;
@@ -28,10 +23,38 @@ vector<float> RessourceLoader::data(string nom_fichier) {
 	}
 	return datavalue;
 }
+vector<float> RessourceLoader::dataone(string nom_fichier,int num_ligne) {
+	ifstream file(nom_fichier);
+	vector<float> datavalue;
+	vector<string> ligne;
+	string line;
+	string split;
+	int comp = 0;
+	char del = ',';
+	string del2 = "\n";
+	stringstream iss;
+	while (getline(file, line)) {
+		ligne.push_back(line);
+		
+	}
+	stringstream ss(ligne[num_ligne-1]);
+	while(getline(ss, split,del)){
+		if (comp == 11) {
+
+		}
+		else {
+			datavalue.push_back(stof(split));
+		}
+		
+		comp++;
+		}
+	return datavalue;
+}
 void RessourceLoader::getTrainData(vector<float> value) {
 	for (int i = 0;i < (value.size() / 2);i++) {
 		cout << value[i] << " ";
 	}
+	//essai avec un code inspiré d'internet mais ne marchais pas alors j'ai fait beaucoup plus simple
 	/*ifstream file(nom_fichier);
 	vector<float> datavalue;
 	string line;
@@ -58,6 +81,7 @@ void RessourceLoader::getTestData(vector<float> value) {
 	for (int i = (value.size() / 2);i < value.size();i++) {
 		cout << value[i] << " ";
 	}
+	//essai avec un code inspiré d'internet mais ne marchais pas alors j'ai fait beaucoup plus simple
 	/*ifstream file(nom_fichier);
 	vector<double> datavalue;
 	string line;

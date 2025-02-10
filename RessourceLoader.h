@@ -13,17 +13,10 @@ class RessourceLoader
 private:
 	string m_nom_fichier;
 	Noeud* m_premier;
-	//Noeud* ajouter_fin(double value,Noeud* avant);
-	/*vector<double> datavalue;
-	string line;
-	char del = ',';
-	while (getline(file, line,del)) {
-		datavalue.push_back(stod(line));
-	}
-	return datavalue;*/
+
 
 public:
-	//void getTrainDatalinked(vector<double> data);
+	vector<float> dataone(string nom_fichier, int num_ligne);
 	RessourceLoader(string nom_fichier) : head(NULL) {}
 	vector<float> data(string nom_fichier);
 	void getTrainData(vector<float> value);
@@ -44,23 +37,7 @@ public:
 		fin->suivant = nouveau;
 		return head;
 
-		/*
-		Noeud* nouveau = new Noeud();
-		nouveau->donnee = value;
-		nouveau->suivant = apres;
-		nouveau->avant = avant;
-		if (!head) 
-		{
-			head = nouveau;
-			return;
-		}
-		Noeud* temp = head;
-		while (temp->suivant) {
-			temp = temp->suivant;
-		}
-		temp->suivant = nouveau;
-		return nouveau; */
-
+	
 	}
 	Noeud* getTrainDatalinked(vector<float> data) {
 		
